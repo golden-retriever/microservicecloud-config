@@ -1,0 +1,65 @@
+﻿spring:
+  profiles:
+    active:
+    - dev
+---
+server:
+  port: 8001 #注册中心占用7001端口，冒号后必须要有空格
+spring:
+  profiles: dev     #开发环境
+  application:
+    name: microservicecloud-config-dept-client
+  datasource:
+    username: zl29
+    password: 123456
+    url: jdbc:oracle:thin:@localhost:1521:orcl
+    driver-class-name: oracle.jdbc.driver.OracleDriver 
+mybatis:
+  config-location: classpath:mybatis/mybatis.cfg.xml
+  type-aliases-package: com.zl.springCloud.entities 
+  mapper-locations:
+  - classpath:mybatis/mapper/**/*.xml
+eureka:
+  instance:
+    instance-id: dept-8001.com
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka/
+
+info: 
+  app.name: zl-microservicecloud
+  company.name: www.zl.com
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
+
+---
+server:
+  port: 8001 #注册中心占用7001端口，冒号后必须要有空格
+spring:
+  profiles: test    #开发环境
+  application:
+    name: microservicecloud-config-dept-client
+  datasource:
+    username: zl29
+    password: 123456
+    url: jdbc:oracle:thin:@localhost:1521:orcl
+    driver-class-name: oracle.jdbc.driver.OracleDriver 
+mybatis:
+  config-location: classpath:mybatis/mybatis.cfg.xml
+  type-aliases-package: com.zl.springCloud.entities 
+  mapper-locations:
+  - classpath:mybatis/mapper/**/*.xml
+eureka:
+  instance:
+    instance-id: dept-8001.com
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka/
+
+info: 
+  app.name: zl-microservicecloud
+  company.name: www.zl.com
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
