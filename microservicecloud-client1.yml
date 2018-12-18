@@ -11,7 +11,11 @@ spring:
     name: microservicecloud-config-client
 eureka:
   client:
+<<<<<<< HEAD:microservicecloud-client1.yml
     service-url: http://eureka-dev.com:7001/eureka/
+=======
+    service-url:http://eureka-dev.com:7001/eureka/
+>>>>>>> facd24d4c00b590d379a1562d31ec673c0cf7888:microservicecloud-client.yml
 ---
 server:
   port: 8202
@@ -21,5 +25,10 @@ spring:
     name: microservicecloud-config-client
 eureka:
   client:
+<<<<<<< HEAD:microservicecloud-client1.yml
     service-url: http://eureka-test.com:7001/eureka/
+=======
+    service-url:http://eureka-test.com:7001/eureka/
+    
+>>>>>>> facd24d4c00b590d379a1562d31ec673c0cf7888:microservicecloud-client.yml
 #utf-8格式保存
